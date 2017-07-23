@@ -1,7 +1,7 @@
 import React from 'react'
 import {RaisedButton} from 'material-ui'
 import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
-import {auth, database} from 'firebase'
+import {database} from 'firebase'
 
 export default class AddSlot extends React.Component{
     constructor(props){
@@ -18,8 +18,7 @@ export default class AddSlot extends React.Component{
     }
     handleChange = ev => {
         ev.target.name === 'Area Name' ? this.setState({areaName: ev.target.value})
-        :ev.target.name === 'Slot Quantity' ? this.setState({slotQty: ev.target.value})
-        :null
+        :ev.target.name === 'Slot Quantity' && this.setState({slotQty: ev.target.value})
     }
     handleSubmit = () => {
         let arr = [];

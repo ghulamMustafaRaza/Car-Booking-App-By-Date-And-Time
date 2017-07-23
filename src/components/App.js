@@ -6,7 +6,7 @@ import NavBar from './NavBar';
 import Loader from './Loader';
 import Signin from './Signin';
 import Signup from './Signup';
-import {database, auth} from 'firebase';
+import {auth} from 'firebase';
 import { connect } from 'react-firebase'
 import AddSlot from "./adminComponents/AddSlot"
 import AllSlot from "./adminComponents/AllSlot"
@@ -18,6 +18,7 @@ import OldBooking from "./userComponents/OldBooking"
 import BookASlot from "./userComponents/BookASlot"
 import PostFeedback from "./userComponents/PostFeedback"
 import LocationDetail from "./userComponents/LocationDetail"
+import AdminLocationDetail from "./adminComponents/LocationDetail"
 
 injectTapEventPlugin()
 
@@ -57,12 +58,6 @@ class App extends Component{
                                 this.state.loading
                                 ? 
                                     <Loader fullpage={true}/>
-                                    :!auth().currentUser?
-                                    <div>
-                                        <h1 className="text-center">
-                                            login first
-                                        </h1>
-                                    </div>
                                 :
                                     this.state.type === "admin"
                                     ?
@@ -72,7 +67,7 @@ class App extends Component{
                                             <Route path="/user/allbooking" component={AllBooking}/>
                                             <Route path="/user/alluser" component={AllUser}/>
                                             <Route path="/user/allfeedback" component={AllFeedback}/>
-                                            <Route path="/user/locationdetail" component={LocationDetail}/>
+                                            <Route path="/user/locationdetail" component={AdminLocationDetail}/>
                                         </div>
                                     :this.state.type === 'user'
                                     &&

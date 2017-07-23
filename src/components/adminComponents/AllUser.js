@@ -1,5 +1,5 @@
 import React from 'react'
-import {auth, database} from 'firebase'
+import {database} from 'firebase'
 import {RaisedButton} from 'material-ui'
 import {
   Table,

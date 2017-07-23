@@ -1,7 +1,6 @@
-import React from 'react'
-import {auth, database} from 'firebase'
-import {RaisedButton} from 'material-ui'
-import {List, ListItem} from 'material-ui/List';
+import React from 'react';
+import {auth, database} from 'firebase';
+import {RaisedButton} from 'material-ui';
 import {
   Table,
   TableBody,
